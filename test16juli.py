@@ -4,6 +4,6 @@ pygame.init()
 sound = pygame.mixer.Sound("audio.wav")
 sound.play()
 try:
-    while True: pass
+    while pygame.mixer.get_busy(): pass
 except KeyboardInterrupt:
     print("playback stopped by user")
