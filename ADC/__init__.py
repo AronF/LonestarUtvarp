@@ -1,6 +1,7 @@
 from .getdata import getData
 from .cleanup import cleanup
 from .pindefs import *
+import RPi.GPIO as gpio
 
 gpio.setmode(gpio.BOARD)
 
