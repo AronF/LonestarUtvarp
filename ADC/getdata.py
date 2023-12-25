@@ -1,3 +1,5 @@
+import RPi.GPIO as gpio
+
 def getData():
     gpio.output(INTERRUPT, 0)
     data = 0
