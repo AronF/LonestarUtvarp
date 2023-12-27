@@ -3,3 +3,6 @@
 DATA = 11
 CLOCK = 13
 INTERRUPT = 15
+
+LED = 29
+FMAM = 31
