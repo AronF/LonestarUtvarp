@@ -2,6 +2,7 @@ import RPi.GPIO as gpio
 from .pindefs import *
 
 #reads from the adc module returning a tuple of both read results
+#reads LSB first (!!)
 def getData():
     #interrupt low starts the communication with the chip
     gpio.output(INTERRUPT, 0)
@@ -10,8 +11,8 @@ def getData():
         #busy wait for the clock to go high
         while not gpio.input(CLOCK): pass
         #shift and add to the output
-        data <<= 1
-        data |= gpio.input(DATA)
+        bit = gpio.input(DATA) << i
+        data |= bit
         #busy wait for the clock to go low again
         while gpio.input(CLOCK): pass
     #reset the interrupt for next time
