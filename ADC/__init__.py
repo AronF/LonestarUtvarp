@@ -10,7 +10,7 @@ gpio.setmode(gpio.BOARD)
 
 #set inputs and outputs
 gpio.setup([DATA, CLOCK, FMAM], gpio.IN)
-gpio.setup(LED, gpio.OUT)
 #INTERRUPT is active low so it's initallized high
-gpio.setup(INTERRUPT, gpio.OUT, initial=gpio.HIGH)
+#light is off when LED is high (no current flowing from high to high)
+gpio.setup([INTERRUPT, LED], gpio.OUT, initial=gpio.HIGH)
 
