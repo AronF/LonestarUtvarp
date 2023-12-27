@@ -1,5 +1,5 @@
 import RPi.GPIO as gpio
 from .pindefs import *
 
-def isAM():
+def isFM():
     return not gpio.input(FMAM)

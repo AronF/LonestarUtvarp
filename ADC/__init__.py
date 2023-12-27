@@ -1,7 +1,7 @@
 from .getdata import getData
 from .cleanup import cleanup
 from .led import ledOn, ledOff
-from .am import isAM
+from .fm import isFM
 from .pindefs import *
 import RPi.GPIO as gpio
 
