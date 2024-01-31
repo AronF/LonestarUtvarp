@@ -3,6 +3,7 @@ from .pindefs import *
 
 #reads from the adc module returning a tuple of both read results
 #reads LSB first (!!)
+#TODO: the system is not realtime so this function can fail. Add a timeout and a failure return
 def getData():
     #interrupt low starts the communication with the chip
     gpio.output(INTERRUPT, 0)
