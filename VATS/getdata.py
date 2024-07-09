@@ -3,6 +3,8 @@ from .pindefs import *
 
 #reads from the adc module returning a tuple of both read results
 #reads LSB first (!!)
+#IMPORANT TODO:
+#þetta þarf að breytast því þetta gerir ekki ráð fyrir context switching á RPI
 def getData():
     #interrupt low starts the communication with the chip
     gpio.output(INTERRUPT, 0)
